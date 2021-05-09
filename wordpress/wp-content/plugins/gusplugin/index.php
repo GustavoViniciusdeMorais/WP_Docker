@@ -19,10 +19,15 @@ function gs_init()
     require_once 'examples/addmenuicon.php';
     menu_icon();
 
+    echo "<link rel='stylesheet' type='text/css' href='style/grid.css'>";
+
     if(isset($_GET['gus'])){
-        if($_GET['gus'] == 'post'){
+        if($_GET['gus'] == 'posts'){
             require_once 'examples/queries.php';
             posts();
+        }elseif($_GET['gus'] == 'images'){
+            require_once 'examples/fakeapirequest.php';
+            getimages();
         }else{
             var_dump($_GET['gus']);
             exit;
